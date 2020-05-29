@@ -7,8 +7,9 @@ template<typename O, typename L>
 class QxInputParameterBase : public qx::service::IxParameter
 {
 public:
-
-    O instance;
+    typedef std::shared_ptr<O> O_ptr;
+    typename qx::trait::get_primary_key<O>::type id;
+    O_ptr instance;
     L list;
     qx_query query;
     QStringList columns;
