@@ -968,6 +968,82 @@ public:
     OUTPUT_ptr output = this->getOutputParameter();
     return output->invalid;
   }
+#else
+
+  OBJECT_ptr fetchById(typename qx::trait::get_primary_key<OBJECT>::type id,
+                       const QStringList &columns = QStringList(),
+                       const QStringList &relations = QStringList()) {
+  }
+
+  QSqlError fetchById(OBJECT_ptr &p, const QStringList &columns = QStringList(),
+                      const QStringList &relations = QStringList()) {
+  }
+  QSqlError fetchById(LIST_ptr &lst, const QStringList &columns = QStringList(),
+                      const QStringList &relations = QStringList()) {
+  }
+  QSqlError fetchAll(LIST_ptr &lst, const QStringList &columns = QStringList(),
+                     const QStringList &relations = QStringList()) {
+  }
+  QSqlError fetchByQuery(const qx_query &query, LIST_ptr &lst,
+                         const QStringList &columns = QStringList(),
+                         const QStringList &relations = QStringList()) {
+  }
+
+  QSqlError insert(OBJECT_ptr &p,
+                   const QStringList &relations = QStringList()) {
+  }
+  QSqlError insert(LIST_ptr &lst,
+                   const QStringList &relations = QStringList()) {
+  }
+  QSqlError update(OBJECT_ptr &p, const qx_query &query = qx_query(),
+                   const QStringList &columns = QStringList(),
+                   const QStringList &relations = QStringList()) {
+  }
+  QSqlError update(LIST_ptr &lst, const qx_query &query = qx_query(),
+                   const QStringList &columns = QStringList(),
+                   const QStringList &relations = QStringList()) {
+  }
+  QSqlError save(OBJECT_ptr &p, const QStringList &relations = QStringList()) {
+  }
+  QSqlError save(LIST_ptr &lst, const QStringList &relations = QStringList()) {
+  }
+  QSqlError deleteById(QString name) {
+  }
+  QSqlError deleteById(OBJECT_ptr &p) {
+  }
+  QSqlError deleteById(LIST_ptr &lst) {
+  }
+  QSqlError deleteAll() {
+  }
+  QSqlError deleteByQuery(const qx_query &query) {
+  }
+  QSqlError destroyById(QString name) {
+  }
+  QSqlError destroyById(OBJECT_ptr &p) {
+  }
+  QSqlError destroyById(LIST_ptr &lst) {
+  }
+  QSqlError destroyAll() {
+  }
+  QSqlError destroyByQuery(const qx_query &query) {
+  }
+
+  QSqlError executeQuery(qx_query &query, OBJECT_ptr &p) {
+  }
+  QSqlError executeQuery(qx_query &query, LIST_ptr &lst) {
+  }
+  QSqlError callQuery(qx_query &query) {
+  }
+  qx_bool exist(OBJECT_ptr &p) {
+  }
+  qx_bool exist(LIST_ptr &lst) {
+  }
+  QSqlError count(long &lCount, const qx_query &query = qx_query()) {
+  }
+  qx::QxInvalidValueX isValid(OBJECT_ptr &p) {
+  }
+  qx::QxInvalidValueX isValid(LIST_ptr &lst) {
+  }
 #endif
 };
 QX_REGISTER_CLASS_NAME_TEMPLATE_4(QxServiceBase);
