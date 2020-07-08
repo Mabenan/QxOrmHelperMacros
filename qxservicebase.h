@@ -79,14 +79,14 @@ public:
   }
 
 #else
-  void count_() {
+  virtual void count_() {
     OUTPUT_ptr output = OUTPUT_ptr(new OUTPUT());
     INPUT_ptr input = this->getInputParameter();
     output->error = qx::dao::count<OBJECT>(output->count, input->query);
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void fetchById_() {
+  virtual void fetchById_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -130,7 +130,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void fetchAll_() {
+  virtual void fetchAll_() {
 
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
@@ -153,7 +153,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void fetchByQuery_() {
+  virtual void fetchByQuery_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -176,7 +176,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void insert_() {
+  virtual void insert_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -209,7 +209,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void update_() {
+  virtual void update_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -244,7 +244,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void save_() {
+  virtual void save_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(
@@ -278,7 +278,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void deleteById_() {
+  virtual void deleteById_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -314,7 +314,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void deleteAll_() {
+  virtual void deleteAll_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -346,7 +346,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void destroyById_() {
+  virtual void destroyById_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -382,7 +382,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void destroyAll_() {
+  virtual void destroyAll_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -398,7 +398,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void destroyByQuery_() {
+  virtual void destroyByQuery_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -414,7 +414,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void executeQuery_() {
+  virtual void executeQuery_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -444,7 +444,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void exist_() {
+  virtual void exist_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(
@@ -468,7 +468,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void isValid_() {
+  virtual void isValid_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
@@ -490,7 +490,7 @@ public:
     this->setOutputParameter(output);
     this->setMessageReturn(true);
   }
-  void callQuery_() {
+  virtual void callQuery_() {
     INPUT_ptr input = this->getInputParameter();
     if (!input) {
       this->setMessageReturn(0, "invalid input parameter to call service "
